@@ -27,10 +27,10 @@ This is the main backend used to serve the requests of the DevDNA Project which 
 4. **Install the required packages**
    - Run:
      ```sh
-         pip install -r requirements.txt
+     pip install -r requirements.txt
      ```
 5. **Run the server**
    - Run:
      ```sh
-         python main.py
+     python main.py
      ```
