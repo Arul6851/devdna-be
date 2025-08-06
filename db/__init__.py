@@ -8,9 +8,9 @@ if db_url is None:
     print("empty db url")
     exit(1)
     
-engine=create_engine(db_url)
-session =sessionmaker(bind=engine,autocommit=False)
-Base=declarative_base()
+engine = create_engine(db_url)
+session = sessionmaker(bind=engine,autocommit=False)
+Base = declarative_base()
 
 def get_db():
     db = session()
