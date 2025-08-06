@@ -1,0 +1,10 @@
+uvicorn
+python-dotenv
+fastapi
+SQLAlchemy
+sqlalchemyseed
+bcrypt
+pydantic
+passlib
+starlette
+psycopg2
