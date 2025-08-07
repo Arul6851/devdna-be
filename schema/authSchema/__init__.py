@@ -1,6 +1,8 @@
-from pydantic import BaseModel as PydanticModel,ValidationError
+from uuid import UUID
+from pydantic import BaseModel as PydanticModel,ValidationError,ConfigDict
 from exception import customException
 from controller.http import http_codes
+import datetime
 
 class BaseModel(PydanticModel):
     def __init__(self, **data):
@@ -13,7 +15,19 @@ class BaseModel(PydanticModel):
             raise customException(message=http_codes[400], status_code=400)
         
 class Developer(BaseModel):
-    username: str
     email: str
     password: str
     name: str
+    
+class RegisterResponse(BaseModel):
+    id: UUID
+    email: str
+    name: str
+    created_at: datetime.datetime
+    updated_at: datetime.datetime
+    
+    model_config = ConfigDict(from_attributes=True)
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
